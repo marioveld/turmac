@@ -26,7 +26,7 @@ class Square:
         self.symbol: bool = symbol
 
     @classmethod
-    def from_pattern(self, pattern: str) -> 'Square':
+    def from_pattern(cls, pattern: str) -> 'Square':
         """This enables creating instances from a pattern.
 
         We use a from_pattern(s) class methods throughout this script.
@@ -39,7 +39,7 @@ class Square:
         """
         if pattern not in ['o', 'x']:
             raise ValueError("Pattern should be either 'o' or 'x'")
-        return Square(pattern[0] == 'x')
+        return cls(pattern[0] == 'x')
 
     def __str__(self) -> str:
         return f'Square({str(self.symbol)})'
@@ -59,7 +59,7 @@ class Tape:
 
     @classmethod
     def from_pattern(cls, pattern: str) -> 'Tape':
-        return Tape([Square.from_pattern(c) for c in pattern])
+        return cls([Square.from_pattern(c) for c in pattern])
 
     def __str__(self) -> str:
         return f"Tape([{', '.join([str(x) for x in self.squares])}])"
@@ -101,7 +101,7 @@ class Behavior:
             raise ValueError("First character should be either 'o' or 'x'")
         if c2 not in ['L', 'R']:
             raise ValueError("Second character should be either 'L' or 'R'")
-        return Behavior(c1 == 'x', c2 == 'R', int(rest))
+        return cls(c1 == 'x', c2 == 'R', int(rest))
 
     def __str__(self) -> str:
         return f"Behavior({self.symbol}, {self.goes_right}, {self.state_i})"
@@ -120,7 +120,7 @@ class State:
 
     @classmethod
     def from_pattern(cls, pattern: str) -> 'State':
-        return State(*[Behavior.from_pattern(x) for x in pattern.split(',')])
+        return cls(*[Behavior.from_pattern(x) for x in pattern.split(',')])
 
     def __str__(self) -> str:
         return f"State({self.when_false}, {self.when_true})"
@@ -143,7 +143,7 @@ class Program:
 
     @classmethod
     def from_patterns(cls, patterns: list[str]) -> 'Program':
-        return Program([State.from_pattern(x) for x in patterns])
+        return cls([State.from_pattern(x) for x in patterns])
 
     def __str__(self) -> str:
         return f"Program([{', '.join([str(state) for state in self.states])}])"
@@ -226,7 +226,7 @@ class Machine:
         tape_pattern: str,
         program_patterns: list[str]
     ) -> 'Machine':
-        return Machine(
+        return cls(
             Tape.from_pattern(tape_pattern),
             Program.from_patterns(program_patterns)
         )
@@ -324,7 +324,7 @@ class Operator:
         tape_pattern: str,
         program_patterns: list[str]
     ) -> 'Operator':
-        return Operator(Machine.from_patterns(tape_pattern, program_patterns))
+        return cls(Machine.from_patterns(tape_pattern, program_patterns))
 
     def __str__(self) -> str:
         return f"Operator({self.machine})"
