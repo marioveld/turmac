@@ -298,6 +298,9 @@ class Machine:
         )
         return move
 
+    def run(self) -> None:
+        list(self)
+
     def rewind(self) -> None:
         self.square_i = 0
         self.state_i = 1 # 0 means halt!
