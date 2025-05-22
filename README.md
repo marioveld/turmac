@@ -26,3 +26,9 @@ that enabled me to do some emulated tape programming.
 Object-oriented programming is especially well-suited for this.
 It can be risky and sometimes tedious to keep track of state,
 but it resembles what we would have had to do with a physical machine.
+
+Many thanks to [EloiSanchez](https://github.com/EloiSanchez)
+(at [Nimbus Intelligence](https://nimbusintelligence.com))
+for looking at my code and helping out with ideas and suggestions.
+
+*This project was created using Python 3.11.*
