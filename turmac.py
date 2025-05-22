@@ -299,7 +299,8 @@ class Machine:
         return move
 
     def run(self) -> None:
-        list(self)
+        for move in self:
+            pass
 
     def rewind(self) -> None:
         self.square_i = 0
