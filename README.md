@@ -84,7 +84,7 @@ This will print out the following:
         ┌─┬─┐
 Input   │o│o│
         ├─┼─┤
-State 0 │x├o┤
+State 0 ├x┤o│
         ├─┼─┤
 Output  │x│o│
         └─┴─┘
@@ -103,18 +103,18 @@ But here is an example of the output:
         ┌─┬─┬─┬─┬─┬─┬─┬─┐
 4 1     │x│x│x│x│x│o│x│x│
         ├─┼─┼─┼─┼─┼─┼─┼─┤
-State 0 │o├x┤x│x│x│o│x│x│
-State 1 │o│x├x┤x│x│o│x│x│
-State 2 │o│x│x├x┤x│o│x│x│
-State 3 │o│x│x│x├x┤o│x│x│
-State 4 │o│x│x│x│x├o┤x│x│
-State 5 │o│x│x│x├x┤x│x│x│
-State 4 │o│x│x├x┤x│x│x│x│
-State 3 │o│x├x┤x│x│x│x│x│
-State 2 │o├x┤x│x│x│x│x│x│
-State 1 ├o┤x│x│x│x│x│x│x│
-State 0 │o├x┤x│x│x│x│x│x│
-State 1 │o│o├x┤x│x│x│x│x│
+State 0 ├o┤x│x│x│x│o│x│x│
+State 1 │o├x┤x│x│x│o│x│x│
+State 2 │o│x├x┤x│x│o│x│x│
+State 3 │o│x│x├x┤x│o│x│x│
+State 4 │o│x│x│x├x┤o│x│x│
+State 5 │o│x│x│x│x├x┤x│x│
+State 4 │o│x│x│x├x┤x│x│x│
+State 3 │o│x│x├x┤x│x│x│x│
+State 2 │o│x├x┤x│x│x│x│x│
+State 1 │o├x┤x│x│x│x│x│x│
+State 0 ├o┤x│x│x│x│x│x│x│
+State 1 │o├o┤x│x│x│x│x│x│
         ├─┼─┼─┼─┼─┼─┼─┼─┤
 5       │o│o│x│x│x│x│x│x│
         └─┴─┴─┴─┴─┴─┴─┴─┘
