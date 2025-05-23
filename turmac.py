@@ -193,8 +193,8 @@ class Move:
         pointer_left = '\u251c' if is_fancy else '>'
         pointer_right = '\u2524' if is_fancy else sep
         row = [sep]
-        pointer_start: int = self.to_square_i * 2
-        pointer_end: int = self.to_square_i * 2 + 2
+        pointer_start: int = self.from_square_i * 2
+        pointer_end: int = self.from_square_i * 2 + 2
         for symbol in self.symbols:
             row.append('x' if symbol == True else 'o')
             row.append(sep)
